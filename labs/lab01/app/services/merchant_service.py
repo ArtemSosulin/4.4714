@@ -41,7 +41,7 @@ class MerchantService:
             return CheckResult(False, "MERCHANT_CHANNEL_DENIED")
         return CheckResult(True)
 
-
+from app.domain.merchant import Merchant
 from app.support.types import Repository
 
 
@@ -52,43 +52,42 @@ from app.support.types import name as valid_name, country as valid_country
 from app.support.errors import DomainError
 
 def make_entity(merchant_id, name, category, country):
-    return {'merchant_id': merchant_id, 'name': name, 'category': category, 'country': country, "status": "ACTIVE"}
+    return Merchant(merchant_id, name, category, country)
 
 def _new_legacy_service(repository):
     return {"repository": repository}
 
 def view(entity):
-    return dict(entity)
-
+    return {
+        "merchant_id": entity.merchant_id,
+        "name": entity.name,
+        "category": entity.category,
+        "country": entity.country,
+        "status": entity.status,
+    }
 def invoke(service, method, *args, **kwargs):
-    repository = service["repository"]
     if method == "register":
-        return repository.add(args[0])
-    entity = repository.get(args[0])
-    if method == "get":
-        return entity
-    if method == "suspend":
-        entity["status"] = "SUSPENDED"
-        return None
-    if method == "activate":
-        entity["status"] = "ACTIVE"
-        return None
-    if method == "close":
-        entity["status"] = "CLOSED"
-        return None
-    if method == "check":
-        context = args[1]
-        if entity["status"] != "ACTIVE":
-            return CheckResult(False, "MERCHANT_" + ("NOT_ACTIVE" if entity["status"] == "NEW" else entity["status"]))
-        if entity["category"] == "GAMBLING":
-            return CheckResult(False, "MERCHANT_CATEGORY_DENIED")
-        if context.channel not in {"POS", "ONLINE"}:
-            return CheckResult(False, "MERCHANT_CHANNEL_DENIED")
-        return CheckResult(True)
-    raise ValueError(method)
+        return service.register(args[0])
 
+    if method == "get":
+        return service.get(args[0])
+
+    if method == "suspend":
+        return service.suspend(args[0])
+
+    if method == "activate":
+        return service.activate(args[0])
+
+    if method == "close":
+        return service.close(args[0])
+
+    if method == "check":
+        return service.check(args[0], args[1])
+
+    raise ValueError(method)
 
 from app.support.types import Repository
 
 def new_service(repository=None):
-    return _new_legacy_service(repository if repository is not None else Repository("merchant_id"))
+    repository = repository if repository is not None else Repository("merchant_id")
+    return MerchantService(repository)

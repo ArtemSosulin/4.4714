@@ -48,4 +48,6 @@ class Merchant:
         self._status = "CLOSED"
 
     def availability(self):
-        return CheckResult(self.status == "ACTIVE")
+        if self.status == "ACTIVE":
+            return CheckResult(True)
+        return CheckResult(False, "MERCHANT_" + self.status)
