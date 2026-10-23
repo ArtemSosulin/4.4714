@@ -1,0 +1,38 @@
+{
+  "course": "unipay-oop",
+  "files": {
+    ".github/workflows/lab03.yml": "9c6c08497751efe8bb9c141b12e2762bcd3dd8d7e32d6c81ec12f89590af5720",
+    "labs/lab03/REFERENCE.md": "7ac6f9f262c20c44c7c6b37b39d4cdd8dcfd41b5dd47a93a1e96510d90393e63",
+    "labs/lab03/STARTER-STATE.md": "82b945699ae50b7dfaa29d7f24f4ca30e452f621841a3bb2d0875c22df21b707",
+    "labs/lab03/TASK.md": "0212b51bef0309bbe0cb8c98a9d1615a7ec588e21af6bfb8bafe3012a7eafe80",
+    "labs/lab03/app/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "labs/lab03/app/api.py": "2f9fe7f3ce68a6c3dca064a3c13d86273da0c0e114730a3b9bf003b396a0fd20",
+    "labs/lab03/app/domain/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "labs/lab03/app/domain/acceptance.py": "1f01ae471e58f7df3655a7f5f370b93a5afbbb6c01e04709964b5d2e980fb4e8",
+    "labs/lab03/app/domain/merchant.py": "0a609b16cb552cb1430ca24f291c525ad9ceb1d9ca27980d678a96f9808acba9",
+    "labs/lab03/app/services/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "labs/lab03/app/services/assembly.py": "2ee0e959ae039b2b278946b32bf852a92246538b370fdc65201a0e9cb83dc862",
+    "labs/lab03/app/services/merchant_service.py": "1bcf6e8e27825b689e4f843a5f5b01cec73cb39f56e1214b572323b564b3fc26",
+    "labs/lab03/app/support/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "labs/lab03/app/support/errors.py": "ce3b7a67a344a59c282e6dce34f178dd047466712697eaa8dbd9cace93fabaf3",
+    "labs/lab03/app/support/money.py": "f498773c7642b2a19682b8d71b08cf8f049131ca5e363a2ac111825905b15f5c",
+    "labs/lab03/app/support/types.py": "b7f1d8cf0055b91667c72bc1f33a191a85234c7156701eca2993a0499a43024e",
+    "labs/lab03/bonus_tests/test_bonus.py": "b53e568f6d49a3dfa698ef88efe7059bb8f30f93dcda0cf0c165e793e5265929",
+    "labs/lab03/conftest.py": "155c516061e0bfbe0f30e4215d6098c203a0fa0f7201afd88fe9de9b1459bddc",
+    "labs/lab03/protected-files.json": "5e3f2eec2fe051e939ea4ae705b6dd7ddfb9f5d5fcb5b7ebed9bbb08c2e90635",
+    "labs/lab03/pytest.ini": "0a7768bbb53a890047c800347d2a817bbcc0294dfa4f48b8457954b5d75a6f5a",
+    "labs/lab03/tests/test_contract.py": "f2235c29c33d20eca3bd4f802477e553b37226e4c272226e44bfea9d3032161f",
+    "labs/lab03/tests/test_progression.py": "6958ffd9ba32596343be4cfb654c56a4c838f98378db9d26d4e7709de320924d",
+    "labs/lab03/tests/test_review_contract.py": "d3ae142368ded4a9703e4e4cd443209e587c73a247dd5f038eedb53913708f6e"
+  },
+  "format": 1,
+  "lab": 3,
+  "runtime_sha256": {
+    ".gitattributes": "d60f352d0db1404c70afb4bb8b2ca3fd1c610572aa40720e8a0b7baa7885418c",
+    "check.py": "13d78e782ae8486fd09b71adb8fe2d57b9555c17333cbaa233b2ebc504dfaa3a",
+    "requirements.txt": "693d97bdd0fb5283060c3efadf25a90d0c3b59be09b25fac59f5f1c68a1f993b"
+  },
+  "source_commit": "dd84e4c1b25fb000b93255220e421d19fcce3e17",
+  "source_tree": "aa011bdfdbc0cd1baae91f4d25b912209c6d3fd1",
+  "variant": "merchant"
+}
