@@ -38,8 +38,13 @@ class Merchant:
         return self._status
 
     def suspend(self):
+        if self.status != "ACTIVE":
+            raise DomainError("INVALID_STATE")
         self._status = "SUSPENDED"
+
     def activate(self):
+        if self.status != "SUSPENDED":
+            raise DomainError("INVALID_STATE")
         self._status = "ACTIVE"
 
     def close(self):
